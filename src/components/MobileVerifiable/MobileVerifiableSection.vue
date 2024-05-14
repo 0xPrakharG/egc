@@ -13,7 +13,7 @@ import VerifiableBg from './VerifiableBg.vue'
         <h1 class="verifiable-header-shadow-3">VERIFIABLE</h1>
       </div>
       <div class="learn-more-container">
-        <RouterLink href="/verification">
+        <RouterLink to="/verification">
           <p>Learn more</p>
           <img src="@/assets/arrowright.svg" alt="" />
         </RouterLink>
