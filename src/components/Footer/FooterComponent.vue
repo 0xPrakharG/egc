@@ -56,6 +56,7 @@ import { RouterLink } from 'vue-router'
   background: rgba(1, 1, 1, 0.45);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(8.5px);
+  z-index: 700;
 }
 .footer {
   display: flex;
