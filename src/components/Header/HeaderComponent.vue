@@ -262,7 +262,7 @@ header {
   width: 100%;
 }
 .navbar-mobile > div {
-  width: 60%;
+  width: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
