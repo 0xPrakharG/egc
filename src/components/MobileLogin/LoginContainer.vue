@@ -21,7 +21,7 @@ import { RouterLink } from 'vue-router'
         <div class="login-forget">
           <RouterLink to="/login">Forget password?</RouterLink>
         </div>
-        <div class="login-btn"><a href="/profile">LOGIN</a></div>
+        <div class="login-btn"><RouterLink to="/profile">LOGIN</RouterLink></div>
         <div class="login-signup">
           <RouterLink to="/signup">Don&apos;t have and account?</RouterLink>
         </div>

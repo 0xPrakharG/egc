@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import VerifiableBg from './VerifiableBg.vue'
 </script>
 
@@ -48,10 +49,10 @@ import VerifiableBg from './VerifiableBg.vue'
         </div>
       </div>
       <div class="learn-more-container">
-        <a href="/verification">
+        <RouterLink to="/verification">
           <span> Learn more </span>
           <img src="@/assets/arrowright.svg" alt="" />
-        </a>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -186,10 +187,10 @@ import VerifiableBg from './VerifiableBg.vue'
   .verifiable-article-info {
     font-size: 19px;
   }
-  .learn-more-container{
+  .learn-more-container {
     margin-top: 30px;
   }
-  .learn-more-container > a{
+  .learn-more-container > a {
     font-size: 20px;
   }
 }
