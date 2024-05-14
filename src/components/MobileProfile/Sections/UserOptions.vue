@@ -9,19 +9,19 @@ import { RouterLink } from 'vue-router'
         <div>
           <img src="@/assets/edit-profile.svg" alt="" />
         </div>
-        <RouterLink>Edit Profile</RouterLink>
+        <RouterLink to="/profile">Edit Profile</RouterLink>
       </div>
       <div class="option-item">
         <div>
           <img src="@/assets/switch-acc.svg" alt="" />
         </div>
-        <RouterLink>Switch Account</RouterLink>
+        <RouterLink to="/profile">Switch Account</RouterLink>
       </div>
       <div class="option-item">
         <div>
           <img src="@/assets/logout.svg" alt="" />
         </div>
-        <RouterLink>Log Out</RouterLink>
+        <RouterLink to="/profile">Log Out</RouterLink>
       </div>
     </div>
     <div class="user-options-border"></div>
