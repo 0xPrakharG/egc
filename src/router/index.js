@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
 import VerificationView from '@/views/VerificationView.vue'
 import HelpView from '@/views/HelpView.vue'
 import LoginView from '@/views/LoginView.vue'
@@ -17,7 +17,7 @@ const router = createRouter({
     },
     {
       path: '/verification',
-      name: 'verification',
+      name: 'Verification',
       component: VerificationView
     },
     {
@@ -32,7 +32,7 @@ const router = createRouter({
     },
     {
       path: '/signup',
-      name: 'SignUp',
+      name: 'Signup',
       component: SignupView
     },
     {
