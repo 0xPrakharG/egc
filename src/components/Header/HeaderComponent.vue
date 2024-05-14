@@ -269,7 +269,7 @@ header {
 }
 .navbar-mobile > div > a {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 36.31px;
   color: #ffffff80;
