@@ -38,11 +38,11 @@ export default {
       <h2>Game</h2>
     </div>
     <div class="game-content">
-      <a v-on:click="updateShow" @click="register = true">How to register?</a>
-      <a v-on:click="updateShow" @click="bet = true">How to Play One-Dollar Bet?</a>
-      <a v-on:click="updateShow" @click="crash = true">How to Play Crash?</a>
-      <a v-on:click="updateShow" @click="mines = true">How to Play Mines?</a>
-      <a v-on:click="updateShow" @click="fairness = true">What is Verifiable Fairness?</a>
+      <div v-on:click="updateShow" @click="bet = true">How to Play One-Dollar Bet?</div>
+      <div v-on:click="updateShow" @click="register = true">How to register?</div>
+      <div v-on:click="updateShow" @click="crash = true">How to Play Crash?</div>
+      <div v-on:click="updateShow" @click="mines = true">How to Play Mines?</div>
+      <div v-on:click="updateShow" @click="fairness = true">What is Verifiable Fairness?</div>
     </div>
   </div>
   <div class="article" v-if="register == true">

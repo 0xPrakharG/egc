@@ -1,3 +1,6 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 <template>
   <div>
     <div class="login-container">
@@ -15,11 +18,11 @@
           <input placeholder="Password" required="" type="text" />
         </div>
         <div class="login-forget">
-          <a>Forget password?</a>
+          <RouterLink to="/">Forget password?</RouterLink>
         </div>
         <div class="login-btn"><a href="/profile">LOGIN</a></div>
         <div class="login-signup">
-          <a href="/signup">Don&apos;t have and account?</a>
+          <RouterLink to="/signup">Don&apos;t have and account?</RouterLink>
         </div>
       </div>
     </div>

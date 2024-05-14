@@ -37,16 +37,16 @@ export default {
       <h2>Platform</h2>
     </div>
     <div class="platform-content">
-      <a v-on:click="updateShow" @click="platform = true">What is the Platform for?</a>
-      <a v-on:click="updateShow" @click="governance = true"
-        >What is the Governance Token of the Platform?</a
-      >
-      <a v-on:click="updateShow" @click="allocated = true"
-        >How is the Governance Token Allocated?</a
-      >
-      <a v-on:click="updateShow" @click="plans = true"
-        >What are the Future Plans of the Platform?</a
-      >
+      <div v-on:click="updateShow" @click="platform = true">What is the Platform for?</div>
+      <div v-on:click="updateShow" @click="governance = true">
+        What is the Governance Token of the Platform?
+      </div>
+      <div v-on:click="updateShow" @click="allocated = true">
+        How is the Governance Token Allocated?
+      </div>
+      <div v-on:click="updateShow" @click="plans = true">
+        What are the Future Plans of the Platform?
+      </div>
     </div>
   </div>
   <div class="article" v-if="platform == true">

@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import VerifiableBg from './VerifiableBg.vue'
 </script>
 <template>
@@ -12,10 +13,10 @@ import VerifiableBg from './VerifiableBg.vue'
         <h1 class="verifiable-header-shadow-3">VERIFIABLE</h1>
       </div>
       <div class="learn-more-container">
-        <a href="/verification">
+        <RouterLink href="/verification">
           <p>Learn more</p>
           <img src="@/assets/arrowright.svg" alt="" />
-        </a>
+        </RouterLink>
       </div>
       <div class="verifiable-articles">
         <div class="verifiable-article">

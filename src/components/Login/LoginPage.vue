@@ -4,7 +4,7 @@ import LoginContainer from '@/components/Login/LoginContainer.vue'
 </script>
 
 <template>
-  <div>
+  <div style="position: relative; overflow: hidden">
     <LoginBg />
     <LoginContainer />
   </div>

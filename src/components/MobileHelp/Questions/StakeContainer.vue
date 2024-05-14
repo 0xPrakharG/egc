@@ -37,10 +37,10 @@ export default {
       <h2>Stake</h2>
     </div>
     <div class="stake-content">
-      <a v-on:click="updateShow" @click="stake = true">How to stake?</a>
-      <a v-on:click="updateShow" @click="deposit = true">How to Deposit EGC?</a>
-      <a v-on:click="updateShow" @click="purchase = true">How to Purchase EGC?</a>
-      <a v-on:click="updateShow" @click="benefits = true">What are the Benefits of Staking?</a>
+      <div v-on:click="updateShow" @click="stake = true">How to stake?</div>
+      <div v-on:click="updateShow" @click="deposit = true">How to Deposit EGC?</div>
+      <div v-on:click="updateShow" @click="purchase = true">How to Purchase EGC?</div>
+      <div v-on:click="updateShow" @click="benefits = true">What are the Benefits of Staking?</div>
     </div>
   </div>
   <div class="article" v-if="stake == true">

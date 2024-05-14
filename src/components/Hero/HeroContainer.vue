@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div class="hero-center-text">
     <div class="center-container">
@@ -5,10 +9,10 @@
       <p class="hero-center-info">Explore the future of blockchain gaming</p>
     </div>
   </div>
-  <a class="join-now-btn"
+  <RouterLink to="/" class="join-now-btn"
     ><p>Join now</p>
     <img src="@/assets/chevronright.svg" alt=""
-  /></a>
+  /></RouterLink>
 </template>
 
 <style scoped>
@@ -52,6 +56,7 @@
   position: absolute;
   bottom: 12%;
   right: 30px;
+  z-index: 500;
 }
 .join-now-btn > p {
   color: #ffffff;

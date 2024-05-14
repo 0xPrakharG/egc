@@ -20,7 +20,7 @@ export default {
 </script>
 <template>
   <div class="article-container">
-    <div class="article-close-btn" v-on:click="updateArticleShow">
+    <div class="article-close-btn" @click="updateArticleShow">
       <img src="@/assets/article-close.svg" alt="" />
     </div>
     <div class="article-content">

@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div>
     <div class="signup-container">
@@ -14,7 +18,7 @@
             </button>
           </div>
         </div>
-        <div class="signup-btn"><a href="/profile">SIGNUP</a></div>
+        <div class="signup-btn"><RouterLink to="/profile">SIGNUP</RouterLink></div>
       </div>
     </div>
     <footer>

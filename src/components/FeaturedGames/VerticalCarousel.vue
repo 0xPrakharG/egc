@@ -1,4 +1,5 @@
 <script>
+import { RouterLink } from 'vue-router'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -7,7 +8,8 @@ import { Pagination } from 'swiper/modules'
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    RouterLink
   },
   setup() {
     return {
@@ -42,14 +44,14 @@ export default {
               Participate in Easy Get BTC, to win Bitcoin with the smallest investment.
             </p>
             <div class="try-btn-container">
-              <a class="try-btn">Try</a>
+              <RouterLink to="/" class="try-btn">Try</RouterLink>
             </div>
           </div>
           <div class="slide-content-right">
-            <a
+            <RouterLink to="/"
               ><span>Detail</span>
               <img src="@/assets/arrowright.svg" alt="" />
-            </a>
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -70,14 +72,14 @@ export default {
               Participate in Easy Get BTC, to win Bitcoin with the smallest investment.
             </p>
             <div class="try-btn-container">
-              <a class="try-btn">Try</a>
+              <RouterLink to="/" class="try-btn">Try</RouterLink>
             </div>
           </div>
           <div class="slide-content-right">
-            <a
+            <RouterLink to="/"
               ><span>Detail</span>
               <img src="@/assets/arrowright.svg" alt="" />
-            </a>
+            </RouterLink>
           </div>
         </div></div
     ></swiper-slide>
@@ -97,14 +99,14 @@ export default {
               Participate in Easy Get BTC, to win Bitcoin with the smallest investment.
             </p>
             <div class="try-btn-container">
-              <a class="try-btn">Try</a>
+              <RouterLink to="/" class="try-btn">Try</RouterLink>
             </div>
           </div>
           <div class="slide-content-right">
-            <a
+            <RouterLink to="/"
               ><span>Detail</span>
               <img src="@/assets/arrowright.svg" alt="" />
-            </a>
+            </RouterLink>
           </div>
         </div></div
     ></swiper-slide>

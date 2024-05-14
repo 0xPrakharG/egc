@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div>
     <div class="signup-container">
@@ -9,7 +13,7 @@
           <input placeholder="Username" required="" type="option" />
           <input placeholder="Connect your wallet" required="" type="text" />
         </div>
-        <div class="signup-btn"><a href="/profile">SIGNUP</a></div>
+        <div class="signup-btn"><RouterLink to="/profile">SIGNUP</RouterLink></div>
       </div>
     </div>
   </div>

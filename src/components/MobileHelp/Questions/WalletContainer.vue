@@ -37,10 +37,10 @@ export default {
       <h2>Wallet</h2>
     </div>
     <div class="wallet-content">
-      <a v-on:click="updateShow" @click="connect = true">How to Connect Wallet?</a>
-      <a v-on:click="updateShow" @click="chain = true">How to Switch to Polygon Chain?</a>
-      <a v-on:click="updateShow" @click="recharge = true">How to Recharge?</a>
-      <a v-on:click="updateShow" @click="withdraw = true">How to Withdraw?</a>
+      <div v-on:click="updateShow" @click="connect = true">How to Connect Wallet?</div>
+      <div v-on:click="updateShow" @click="chain = true">How to Switch to Polygon Chain?</div>
+      <div v-on:click="updateShow" @click="recharge = true">How to Recharge?</div>
+      <div v-on:click="updateShow" @click="withdraw = true">How to Withdraw?</div>
     </div>
   </div>
   <div class="article" v-if="connect == true">

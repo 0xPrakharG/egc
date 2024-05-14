@@ -1,4 +1,5 @@
 <script>
+import { RouterLink } from 'vue-router'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/effect-cards'
@@ -7,7 +8,8 @@ import { EffectCards } from 'swiper/modules'
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    RouterLink
   },
   setup() {
     return {
@@ -38,10 +40,10 @@ export default {
         <div class="slide-content">
           <div class="slide-content-top">
             <div class="try-btn-container">
-              <a class="try-btn"
+              <RouterLink to="/" class="try-btn"
                 ><p>Try</p>
                 <img src="@/assets/arrow-right.svg" alt="" />
-              </a>
+              </RouterLink>
             </div>
           </div>
           <div class="slide-content-bottom">
@@ -72,10 +74,10 @@ export default {
         <div class="slide-content">
           <div class="slide-content-top">
             <div class="try-btn-container">
-              <a class="try-btn"
+              <RouterLink to="/" class="try-btn"
                 ><p>Try</p>
                 <img src="@/assets/arrow-right.svg" alt="" />
-              </a>
+              </RouterLink>
             </div>
           </div>
           <div class="slide-content-bottom">
@@ -106,10 +108,10 @@ export default {
         <div class="slide-content">
           <div class="slide-content-top">
             <div class="try-btn-container">
-              <a class="try-btn"
+              <RouterLink to="/" class="try-btn"
                 ><p>Try</p>
                 <img src="@/assets/arrow-right.svg" alt="" />
-              </a>
+              </RouterLink>
             </div>
           </div>
           <div class="slide-content-bottom">

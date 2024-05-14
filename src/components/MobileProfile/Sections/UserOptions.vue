@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div class="user-options">
     <div class="options">
@@ -5,19 +9,19 @@
         <div>
           <img src="@/assets/edit-profile.svg" alt="" />
         </div>
-        <a>Edit Profile</a>
+        <RouterLink>Edit Profile</RouterLink>
       </div>
       <div class="option-item">
         <div>
           <img src="@/assets/switch-acc.svg" alt="" />
         </div>
-        <a>Switch Account</a>
+        <RouterLink>Switch Account</RouterLink>
       </div>
       <div class="option-item">
         <div>
           <img src="@/assets/logout.svg" alt="" />
         </div>
-        <a>Log Out</a>
+        <RouterLink>Log Out</RouterLink>
       </div>
     </div>
     <div class="user-options-border"></div>
