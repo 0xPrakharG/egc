@@ -18,7 +18,7 @@ import { RouterLink } from 'vue-router'
           <input placeholder="Password" required="" type="text" />
         </div>
         <div class="login-forget">
-          <RouterLink to="/">Forget password?</RouterLink>
+          <RouterLink to="/login">Forget password?</RouterLink>
         </div>
         <div class="login-btn"><RouterLink to="/profile">LOGIN</RouterLink></div>
         <div class="login-signup">
@@ -117,11 +117,9 @@ import { RouterLink } from 'vue-router'
 }
 .login-forget > a {
   text-decoration: underline;
-  font-family: 'Quantico', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 50px;
-  letter-spacing: 1.5px;
   color: #fff;
   cursor: pointer;
 }
@@ -152,10 +150,8 @@ import { RouterLink } from 'vue-router'
 }
 .login-signup > a {
   cursor: pointer;
-  font-family: Prosto One;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 1.5px;
   color: #3e188f;
   text-decoration: underline;
 }

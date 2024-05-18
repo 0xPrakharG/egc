@@ -1,5 +1,4 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <div class="hero-center-text">
@@ -44,6 +43,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-decoration: none;
   width: 180px;
   background: linear-gradient(95.3deg, rgba(69, 6, 108, 0.54) 5.5%, rgba(134, 12, 210, 0.38) 94.5%);
   border: 1px solid #801ae5;

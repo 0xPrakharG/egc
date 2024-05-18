@@ -143,11 +143,9 @@ import { RouterLink } from 'vue-router'
 }
 .login-forget > a {
   text-decoration: underline;
-  font-family: 'Quantico', sans-serif;
   font-size: 11px;
   font-weight: 400;
   line-height: 30px;
-  letter-spacing: 1.5px;
   color: #fff;
   cursor: pointer;
 }
@@ -178,10 +176,8 @@ import { RouterLink } from 'vue-router'
 }
 .login-signup > a {
   cursor: pointer;
-  font-family: 'Prosto One', sans-serif;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 1.5px;
   color: #3e188f;
   text-decoration: underline;
 }

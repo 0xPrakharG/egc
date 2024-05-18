@@ -47,6 +47,7 @@
   justify-content: space-between;
   align-items: center;
   width: 250px;
+  text-decoration: none;
   background: linear-gradient(95.3deg, rgba(69, 6, 108, 0.54) 5.5%, rgba(134, 12, 210, 0.38) 94.5%);
   border: 1px solid #801ae5;
   border-radius: 30px;
