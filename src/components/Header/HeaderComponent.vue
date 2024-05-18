@@ -5,7 +5,10 @@ import { ref, computed } from 'vue'
 
 const sizes = useMonitorSize()
 const navOpen = ref(false)
-
+const openIntroNav = ref(false)
+const open = computed(() => {
+  return { display: openIntroNav.value ? 'flex' : 'none' }
+})
 const close = computed(() => {
   return { display: navOpen.value ? 'flex' : 'none' }
 })
@@ -80,14 +83,29 @@ const close = computed(() => {
       <RouterLink to="/" class="header-title">EasyGetCoin</RouterLink>
       <div class="navbar-container">
         <nav class="navbar">
-          <RouterLink to="/">Nav1</RouterLink>
-          <RouterLink to="/">Nav2</RouterLink>
-          <RouterLink to="/">Nav3</RouterLink>
-          <RouterLink to="/">Nav4</RouterLink>
+          <div @click="openIntroNav = !openIntroNav">
+            <p>Introduction</p>
+          </div>
+          <div>
+            <a target="_blank" href="https://www.easygetcoin.com/home">Game Platform</a>
+          </div>
+          <div>
+            <RouterLink to="/">Staking</RouterLink>
+          </div>
+          <div>
+            <RouterLink to="/">Whitepaper</RouterLink>
+          </div>
         </nav>
         <RouterLink to="/login" class="profile-img">
           <img src="" alt="" />
         </RouterLink>
+      </div>
+      <div :style="open" class="intro-nav">
+        <a href="#introduction" @click="openIntroNav = !openIntroNav">Game Introduction</a>
+        <RouterLink to="/verification" @click="openIntroNav = !openIntroNav"
+          >Verifiability</RouterLink
+        >
+        <RouterLink to="/help" @click="openIntroNav = !openIntroNav">Help Center</RouterLink>
       </div>
     </div>
   </header>
@@ -362,9 +380,31 @@ header {
     gap: 50px;
     font-size: 15px;
   }
-  .navbar a {
+  .navbar > div > a {
     color: #ffffff;
     text-decoration: none;
+  }
+  .navbar > div > p {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .intro-nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 40%;
+    background: #00000030;
+  }
+  .intro-nav > a {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+  }
+  .intro-nav > a:hover {
+    background: #000;
   }
   .profile-img {
     width: 30px;
@@ -379,6 +419,36 @@ header {
     width: 100%;
     height: 100%;
     display: none; /* remove when img added */
+  }
+}
+@media screen and (min-width: 1051px) {
+  .intro-nav {
+    left: 45%;
+  }
+}
+@media screen and (min-width: 1151px) {
+  .intro-nav {
+    left: 50%;
+  }
+}
+@media screen and (min-width: 1251px) {
+  .intro-nav {
+    left: 54%;
+  }
+}
+@media screen and (min-width: 1351px) {
+  .intro-nav {
+    left: 57%;
+  }
+}
+@media screen and (min-width: 1451px) {
+  .intro-nav {
+    left: 60%;
+  }
+}
+@media screen and (min-width: 1551px) {
+  .intro-nav {
+    left: 63%;
   }
 }
 </style>

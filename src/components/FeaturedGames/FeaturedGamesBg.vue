@@ -3,7 +3,7 @@
     <div class="ellipse-gradient">
       <img src="@/assets/featuredellipse.png" alt="" class="" />
     </div>
-    <img src="@/assets/stars.svg" alt="" class="featured-stars" />
+    <img src="@/assets/stars.svg" alt="" class="featured-stars" id="introduction" />
   </div>
 </template>
 

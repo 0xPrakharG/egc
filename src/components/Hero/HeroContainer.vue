@@ -1,6 +1,4 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
+<script setup></script>
 
 <template>
   <div class="hero-center-text">
@@ -9,10 +7,10 @@ import { RouterLink } from 'vue-router'
       <p class="hero-center-info">Explore the future of blockchain gaming</p>
     </div>
   </div>
-  <RouterLink to="/" class="join-now-btn"
+  <a target="_blank" href="https://www.easygetcoin.com/home" class="join-now-btn"
     ><p>Join now</p>
     <img src="@/assets/chevronright.svg" alt=""
-  /></RouterLink>
+  /></a>
 </template>
 
 <style scoped>
