@@ -6,11 +6,19 @@ import { ref, computed } from 'vue'
 const sizes = useMonitorSize()
 const navOpen = ref(false)
 const openIntroNav = ref(false)
+const navRightOpen = ref(false)
+const openMobileIntro = ref(false)
 const open = computed(() => {
   return { display: openIntroNav.value ? 'flex' : 'none' }
 })
 const close = computed(() => {
   return { display: navOpen.value ? 'flex' : 'none' }
+})
+const closeRight = computed(() => {
+  return { display: navRightOpen.value ? 'flex' : 'none' }
+})
+const openMobileIntroNav = computed(() => {
+  return { display: openMobileIntro.value ? 'flex' : 'none' }
 })
 </script>
 
@@ -28,10 +36,53 @@ const close = computed(() => {
           </RouterLink>
         </div>
         <div class="header-mobile-right">
-          <RouterLink to="/login" class="profile-mobile-img">
-            <img src="" alt="" />
-          </RouterLink>
+          <div>
+            <RouterLink to="/login" class="profile-mobile-img">
+              <img src="" alt="" />
+            </RouterLink>
+          </div>
+          <div class="mobile-nav-right" @click="navRightOpen = !navRightOpen">
+            <img src="@/assets/hamburger.svg" width="30" alt="" @click="openMobileIntro = false" />
+          </div>
         </div>
+      </div>
+      <div class="mobile-right-navbar" :style="closeRight">
+        <div class="close-btn">
+          <img src="@/assets/cross.svg" alt="" width="50" @click="navRightOpen = !navRightOpen" />
+        </div>
+        <nav class="right-nav">
+          <div>
+            <div @click="openMobileIntro = !openMobileIntro" class="right-nav-link">
+              Introduction
+            </div>
+            <div :style="openMobileIntroNav" class="mobile-intro-nav">
+              <a href="#introduction" @click="navRightOpen = !navRightOpen">Game Introduction</a>
+              <RouterLink to="/verification" @click="navRightOpen = !navRightOpen"
+                >Verifiability</RouterLink
+              >
+              <RouterLink to="/help" @click="navRightOpen = !navRightOpen">Help Center</RouterLink>
+            </div>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              href="https://www.easygetcoin.com/home"
+              @click="navRightOpen = !navRightOpen"
+              class="right-nav-link"
+              >Game Platform</a
+            >
+          </div>
+          <div>
+            <RouterLink to="/" @click="navRightOpen = !navRightOpen" class="right-nav-link"
+              >Staking</RouterLink
+            >
+          </div>
+          <div>
+            <RouterLink to="/" @click="navRightOpen = !navRightOpen" class="right-nav-link"
+              >Whitepaper</RouterLink
+            >
+          </div>
+        </nav>
       </div>
       <div class="mobile-nav" :style="close">
         <div class="mobile-nav-container">
@@ -146,6 +197,11 @@ header {
 .header-mobile-title > img {
   width: 45px;
 }
+.header-mobile-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .profile-mobile-img {
   width: 30px;
   height: 30px;
@@ -160,6 +216,64 @@ header {
   width: 100%;
   height: 100%;
   display: none; /* remove when img added */
+}
+.mobile-nav-right {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.mobile-right-navbar {
+  position: absolute;
+  top: 67px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: calc(100vh - 66px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(49, 16, 92, 0.38) 55.33%);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+.close-btn {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  cursor: pointer;
+}
+.right-nav {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.right-nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 36.31px;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+  cursor: pointer;
+}
+.mobile-intro-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px;
+}
+.mobile-intro-nav > a {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 20px;
+  cursor: pointer;
 }
 .mobile-nav {
   display: none;
@@ -312,6 +426,10 @@ header {
   border-radius: 30px;
 }
 @media screen and (min-width: 551px) {
+  .mobile-right-navbar {
+    height: calc(100vh - 70px);
+    top: 70px;
+  }
   .mobile-nav {
     width: 400px;
     margin-top: 70px;

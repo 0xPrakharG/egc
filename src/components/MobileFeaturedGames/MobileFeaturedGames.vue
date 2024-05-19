@@ -4,7 +4,7 @@ import FeaturedGamesBg from './FeaturedGamesBg.vue'
 </script>
 
 <template>
-  <div style="position: relative; overflow: hidden">
+  <div style="position: relative; overflow: hidden" id="introduction">
     <FeaturedGamesBg />
     <div class="featured-games-container">
       <div class="featured-games-text">
