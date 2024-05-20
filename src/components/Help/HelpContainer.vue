@@ -153,6 +153,7 @@ export default {
   padding: 10px 15px;
   background-clip: padding-box;
   border-radius: 50px;
+  cursor: pointer;
 }
 .discord > a {
   color: #af5fff;

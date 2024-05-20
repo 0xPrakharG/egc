@@ -158,7 +158,6 @@ export default {
   padding: 5px 10px;
   background-clip: padding-box;
   border-radius: 50px;
-  text-decoration: none;
   cursor: pointer;
 }
 .discord > a {
