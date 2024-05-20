@@ -24,19 +24,19 @@ import { RouterLink } from 'vue-router'
           </RouterLink>
           <div class="socials">
             <div class="discord">
-              <a>
+              <a target="_blank" href="https://discord.gg/h3uSTnwkK2">
                 <p>Discord</p>
                 <img src="@/assets/discord.svg" alt="" />
               </a>
             </div>
             <div class="twitter">
-              <a>
+              <a target="_blank" href="https://x.com/easygetcoin?s=11">
                 <p>Twitter</p>
                 <img src="@/assets/twitter.svg" alt="" />
               </a>
             </div>
             <div class="telegram">
-              <a>
+              <a target="_blank" href="https://t.me/+exiRYFC5Cc1jOGQ0">
                 <p>Telegram</p>
                 <img src="@/assets/telegram.svg" alt="" />
               </a>
@@ -147,13 +147,13 @@ import { RouterLink } from 'vue-router'
   line-height: 21px;
   cursor: pointer;
 }
-.discord {
+.discord > a {
   color: #9841f0;
 }
-.twitter {
+.twitter > a {
   color: #419cf0;
 }
-.telegram {
+.telegram > a {
   color: #a8e5ff;
 }
 .discord > a > img,

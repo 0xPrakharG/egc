@@ -23,13 +23,13 @@ import ProfileLeft from '@/components/MobileProfile/Sections/ProfileLeft.vue'
         <div class="footer-top">
           <p>TEAM</p>
           <div class="footer-socials">
-            <a class="social-link">
+            <a target="_blank" href="https://t.me/+exiRYFC5Cc1jOGQ0" class="social-link">
               <img src="@/assets/telegram-mobile.svg" alt="" />
             </a>
-            <a class="social-link">
+            <a target="_blank" href="https://discord.gg/h3uSTnwkK2" class="social-link">
               <img src="@/assets/discord-mobile.svg" alt="" />
             </a>
-            <a class="social-link">
+            <a target="_blank" href="https://x.com/easygetcoin?s=11" class="social-link">
               <img src="@/assets/twitter-mobile.svg" alt="" />
             </a>
           </div>

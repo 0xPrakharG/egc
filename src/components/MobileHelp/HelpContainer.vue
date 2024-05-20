@@ -33,7 +33,7 @@ export default {
           </div>
           <div class="help-socials">
             <div class="discord">
-              <a>
+              <a target="_blank" href="https://discord.gg/h3uSTnwkK2">
                 <div class="social-link">
                   <img src="@/assets/discord.svg" alt="" />
                 </div>
@@ -41,7 +41,7 @@ export default {
               </a>
             </div>
             <div class="twitter">
-              <a>
+              <a target="_blank" href="https://x.com/easygetcoin?s=11">
                 <div class="social-link">
                   <img src="@/assets/twitter.svg" alt="" />
                 </div>
@@ -49,7 +49,7 @@ export default {
               </a>
             </div>
             <div class="telegram">
-              <a>
+              <a target="_blank" href="https://t.me/+exiRYFC5Cc1jOGQ0">
                 <div class="social-link">
                   <img src="@/assets/telegram.svg" alt="" />
                 </div>
@@ -158,14 +158,16 @@ export default {
   padding: 5px 10px;
   background-clip: padding-box;
   border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
 }
-.discord {
+.discord > a {
   color: #af5fff;
 }
-.twitter {
+.twitter > a {
   color: #419cf0;
 }
-.telegram {
+.telegram > a {
   color: #a8e5ff;
 }
 .social-link {
@@ -199,12 +201,12 @@ export default {
   gap: 10px;
 }
 @media screen and (min-width: 601px) {
-  .faq-questions-container{
+  .faq-questions-container {
     width: 75%;
   }
 }
 @media screen and (min-width: 801px) {
-  .faq-questions-container{
+  .faq-questions-container {
     width: 55%;
   }
 }
