@@ -144,7 +144,7 @@ const openMobileIntroNav = computed(() => {
             <RouterLink to="/">Staking</RouterLink>
           </div>
           <div>
-            <a href="./../../assets/EGC-white-paper.pdf" target="_blank">Whitepaper</a>
+            <RouterLink to="/">Whitepaper</RouterLink>
           </div>
         </nav>
         <RouterLink to="/login" class="profile-img">
