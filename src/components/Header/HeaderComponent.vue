@@ -6,16 +6,12 @@ import { ref, computed } from 'vue'
 const sizes = useMonitorSize()
 const navOpen = ref(false)
 const openIntroNav = ref(false)
-const navRightOpen = ref(false)
 const openMobileIntro = ref(false)
 const open = computed(() => {
   return { display: openIntroNav.value ? 'flex' : 'none' }
 })
 const close = computed(() => {
   return { display: navOpen.value ? 'flex' : 'none' }
-})
-const closeRight = computed(() => {
-  return { display: navRightOpen.value ? 'flex' : 'none' }
 })
 const openMobileIntroNav = computed(() => {
   return { display: openMobileIntro.value ? 'flex' : 'none' }
@@ -27,7 +23,7 @@ const openMobileIntroNav = computed(() => {
     <div class="header-mobile-content" v-if="sizes.isMobile.value">
       <div class="header-mobile-fixed">
         <div class="header-mobile-left" @click="navOpen = !navOpen">
-          <img src="@/assets/mobile-nav-menu.svg" alt="" />
+          <img src="@/assets/mobile-nav-menu.svg" alt="" @click="openMobileIntro = false" />
         </div>
         <div>
           <RouterLink to="/" class="header-mobile-title">
@@ -35,54 +31,11 @@ const openMobileIntroNav = computed(() => {
             <span>EasyGetCoin</span>
           </RouterLink>
         </div>
-        <div class="header-mobile-right">
-          <div>
-            <RouterLink to="/login" class="profile-mobile-img">
-              <img src="" alt="" />
-            </RouterLink>
-          </div>
-          <div class="mobile-nav-right" @click="navRightOpen = !navRightOpen">
-            <img src="@/assets/hamburger.svg" width="30" alt="" @click="openMobileIntro = false" />
-          </div>
+        <div>
+          <RouterLink to="/login" class="profile-mobile-img">
+            <img src="" alt="" />
+          </RouterLink>
         </div>
-      </div>
-      <div class="mobile-right-navbar" :style="closeRight">
-        <div class="close-btn">
-          <img src="@/assets/cross.svg" alt="" width="50" @click="navRightOpen = !navRightOpen" />
-        </div>
-        <nav class="right-nav">
-          <div>
-            <div @click="openMobileIntro = !openMobileIntro" class="right-nav-link">
-              Introduction
-            </div>
-            <div :style="openMobileIntroNav" class="mobile-intro-nav">
-              <a href="#introduction" @click="navRightOpen = !navRightOpen">Game Introduction</a>
-              <RouterLink to="/verification" @click="navRightOpen = !navRightOpen"
-                >Verifiability</RouterLink
-              >
-              <RouterLink to="/help" @click="navRightOpen = !navRightOpen">Help Center</RouterLink>
-            </div>
-          </div>
-          <div>
-            <a
-              target="_blank"
-              href="https://www.easygetcoin.com/home"
-              @click="navRightOpen = !navRightOpen"
-              class="right-nav-link"
-              >Game Platform</a
-            >
-          </div>
-          <div>
-            <RouterLink to="/" @click="navRightOpen = !navRightOpen" class="right-nav-link"
-              >Staking</RouterLink
-            >
-          </div>
-          <div>
-            <RouterLink to="/" @click="navRightOpen = !navRightOpen" class="right-nav-link"
-              >Whitepaper</RouterLink
-            >
-          </div>
-        </nav>
       </div>
       <div class="mobile-nav" :style="close">
         <div class="mobile-nav-container">
@@ -114,14 +67,26 @@ const openMobileIntroNav = computed(() => {
             <div @click="navOpen = !navOpen">
               <RouterLink to="/">HOME</RouterLink>
             </div>
-            <div @click="navOpen = !navOpen">
-              <RouterLink to="/help">HELP CENTER</RouterLink>
+            <div class="mobile-intro">
+              <div @click="openMobileIntro = !openMobileIntro" class="right-nav-link">
+                INTRODUCTION
+              </div>
+              <div :style="openMobileIntroNav" class="mobile-intro-nav">
+                <a href="#introduction" @click="navOpen = !navOpen">Game Introduction</a>
+                <RouterLink to="/verification" @click="navOpen = !navOpen"
+                  >Verifiability</RouterLink
+                >
+                <RouterLink to="/help" @click="navOpen = !navOpen">Help Center</RouterLink>
+              </div>
             </div>
             <div @click="navOpen = !navOpen">
               <RouterLink to="/record">GAME RECORD</RouterLink>
             </div>
             <div @click="navOpen = !navOpen">
-              <RouterLink to="/verification">GAME VERIFICATION</RouterLink>
+              <RouterLink to="/staking">STAKING</RouterLink>
+            </div>
+            <div @click="navOpen = !navOpen">
+              <RouterLink to="/whitepaper">WHITEPAPER</RouterLink>
             </div>
             <div @click="navOpen = !navOpen">
               <RouterLink to="/login">LOGOUT</RouterLink>
@@ -197,11 +162,6 @@ header {
 .header-mobile-title > img {
   width: 45px;
 }
-.header-mobile-right {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
 .profile-mobile-img {
   width: 30px;
   height: 30px;
@@ -217,64 +177,7 @@ header {
   height: 100%;
   display: none; /* remove when img added */
 }
-.mobile-nav-right {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.mobile-right-navbar {
-  position: absolute;
-  top: 67px;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: calc(100vh - 66px);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(49, 16, 92, 0.38) 55.33%);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-}
-.close-btn {
-  display: flex;
-  width: 100%;
-  justify-content: end;
-  cursor: pointer;
-}
-.right-nav {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 20px;
-}
-.right-nav-link {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 500;
-  line-height: 36.31px;
-  color: #fff;
-  text-decoration: none;
-  width: 100%;
-  text-align: left;
-  padding: 5px;
-  cursor: pointer;
-}
-.mobile-intro-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 0 20px;
-}
-.mobile-intro-nav > a {
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  font-size: 14px;
-  color: #fff;
-  text-decoration: none;
-  line-height: 20px;
-  cursor: pointer;
-}
+
 .mobile-nav {
   display: none;
   position: absolute;
@@ -294,7 +197,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 .wallet-connect {
   display: flex;
@@ -390,7 +293,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
 }
 .navbar-mobile > div {
@@ -399,7 +302,8 @@ header {
   justify-content: center;
   align-items: center;
 }
-.navbar-mobile > div > a {
+.navbar-mobile > div > a,
+.navbar-mobile > div > div {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -420,16 +324,43 @@ header {
   );
   border-radius: 30px;
 }
-.navbar-mobile > div:nth-child(5) > a.router-link-exact-active {
+.navbar-mobile > div:nth-child(6) > a.router-link-exact-active {
   color: #ffffff80;
   background: none;
   border-radius: 30px;
 }
+.mobile-intro {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-intro-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px;
+}
+.mobile-intro-nav > a {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff80;
+  text-decoration: none;
+  line-height: 20px;
+  cursor: pointer;
+  padding: 5px 0;
+}
+.mobile-intro-nav > a.router-link-exact-active {
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    rgba(211, 136, 254, 0.41) 0%,
+    rgba(150, 81, 245, 0.54) 50.22%,
+    rgba(75, 176, 253, 0.63) 100%
+  );
+  border-radius: 30px;
+}
 @media screen and (min-width: 551px) {
-  .mobile-right-navbar {
-    height: calc(100vh - 70px);
-    top: 70px;
-  }
   .mobile-nav {
     width: 400px;
     margin-top: 70px;

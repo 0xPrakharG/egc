@@ -49,6 +49,16 @@ const router = createRouter({
       path: '/record',
       name: 'Record',
       component: RecordView
+    },
+    {
+      path: '/staking',
+      name: 'Staking',
+      component: HomeView
+    },
+    {
+      path: '/whitepaper',
+      name: 'Whitepaper',
+      component: RecordView
     }
   ]
 })

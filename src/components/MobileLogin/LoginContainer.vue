@@ -9,19 +9,7 @@ import { RouterLink } from 'vue-router'
         <div class="login-header">
           <h3>Login</h3>
         </div>
-        <div class="login-input">
-          <div class="login-wallet-input">
-            <input placeholder="Login with your wallet" required="" type="option" />
-            <button>
-              <img src="@/assets/chev-down.svg" alt="" />
-            </button>
-          </div>
-          <input placeholder="Password" required="" type="text" />
-        </div>
-        <div class="login-forget">
-          <RouterLink to="/login">Forget password?</RouterLink>
-        </div>
-        <div class="login-btn"><RouterLink to="/profile">LOGIN</RouterLink></div>
+        <div class="login-btn"><RouterLink to="/profile">Connect Wallet</RouterLink></div>
         <div class="login-signup">
           <RouterLink to="/signup">Don&apos;t have and account?</RouterLink>
         </div>
@@ -67,7 +55,7 @@ import { RouterLink } from 'vue-router'
   z-index: 20;
 }
 .login {
-  margin: 120px auto 0;
+  margin: 220px auto 0;
   width: 90%;
   padding: 20px 15px;
   background: linear-gradient(180deg, rgba(217, 217, 217, 0.34) 0%, rgba(115, 115, 115, 0.46) 100%);
@@ -87,67 +75,6 @@ import { RouterLink } from 'vue-router'
   letter-spacing: 1.5px;
   text-align: left;
   color: #d9d9d9;
-}
-.login-input {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin: 0 auto;
-}
-::placeholder {
-  color: #a8a8a8;
-  opacity: 1;
-  letter-spacing: 1.5px;
-  line-height: 50px;
-  font-size: 14px;
-}
-::-ms-input-placeholder {
-  color: #a8a8a8;
-  letter-spacing: 1.5px;
-  line-height: 50px;
-  font-size: 14px;
-}
-.login-wallet-input > input,
-.login-input > input {
-  width: 100%;
-  color: #a8a8a8;
-  font-family: 'Prosto One', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  background-color: transparent;
-  box-sizing: border-box;
-  padding-block: 10px;
-  border: none;
-  border-bottom: 1px solid #fff;
-}
-.login-wallet-input > input:focus,
-.login-input > input:focus {
-  outline: none;
-}
-.login-wallet-input {
-  position: relative;
-}
-.login-wallet-input > button {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-}
-.login-forget {
-  width: 90%;
-  margin: 0 auto;
-  text-align: right;
-}
-.login-forget > a {
-  text-decoration: underline;
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 30px;
-  color: #fff;
-  cursor: pointer;
 }
 .login-btn {
   width: 50%;
@@ -176,7 +103,7 @@ import { RouterLink } from 'vue-router'
 }
 .login-signup > a {
   cursor: pointer;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 400;
   color: #3e188f;
   text-decoration: underline;
