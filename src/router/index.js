@@ -6,6 +6,7 @@ import LoginView from '@/views/LoginView.vue'
 import SignupView from '@/views/SignupView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import RecordView from '@/views/RecordView.vue'
+import WhitepaperView from '@/views/WhitepaperView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,7 +59,7 @@ const router = createRouter({
     {
       path: '/whitepaper',
       name: 'Whitepaper',
-      component: RecordView
+      component: WhitepaperView
     }
   ]
 })

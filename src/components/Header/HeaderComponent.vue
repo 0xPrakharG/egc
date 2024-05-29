@@ -106,10 +106,10 @@ const openMobileIntroNav = computed(() => {
             <a target="_blank" href="https://www.easygetcoin.com/home">Game Platform</a>
           </div>
           <div>
-            <RouterLink to="/">Staking</RouterLink>
+            <RouterLink to="/staking">Staking</RouterLink>
           </div>
           <div>
-            <RouterLink to="/">Whitepaper</RouterLink>
+            <RouterLink to="/whitepaper">Whitepaper</RouterLink>
           </div>
         </nav>
         <RouterLink to="/login" class="profile-img">
