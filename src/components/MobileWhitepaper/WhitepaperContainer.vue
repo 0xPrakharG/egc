@@ -1,7 +1,12 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 const currentSection = ref('')
+const openPageNav = ref(false)
+
+const openNav = computed(() => {
+  return { display: openPageNav.value ? 'flex' : 'none' }
+})
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -21,6 +26,301 @@ onMounted(() => {
   <div class="whitepaper">
     <div class="bg"></div>
     <div class="whitepaper-container">
+      <div class="page-nav">
+        <div class="page-nav-header" @click="openPageNav = !openPageNav">
+          <p>On This Page</p>
+          <svg
+            width="9"
+            height="11"
+            viewBox="0 0 9 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.89919 3.83454L2.14023 0.228458C1.90515 0.0821318 1.58715 0 1.25568 0C0.924211 0 0.606211 0.0821318 0.371131 0.228458C0.253532 0.301493 0.160192 0.388385 0.0964937 0.484123C0.0327954 0.57986 0 0.682547 0 0.786261C0 0.889974 0.0327954 0.992662 0.0964937 1.0884C0.160192 1.18414 0.253532 1.27103 0.371131 1.34406L6.14265 4.94229C6.26025 5.01532 6.35359 5.10221 6.41728 5.19795C6.48098 5.29369 6.51378 5.39638 6.51378 5.50009C6.51378 5.6038 6.48098 5.70649 6.41728 5.80223C6.35359 5.89797 6.26025 5.98486 6.14265 6.05789L0.371131 9.65612C0.134871 9.80301 0.00148041 10.0027 0.000303925 10.2111C-0.000872564 10.4196 0.130262 10.6199 0.364859 10.7678C0.599456 10.9157 0.918297 10.9993 1.25124 11C1.58419 11.0007 1.90397 10.9186 2.14023 10.7717L7.89919 7.16564C8.60407 6.72372 9 6.12467 9 5.50009C9 4.87551 8.60407 4.27646 7.89919 3.83454Z"
+              fill="#868383"
+            />
+          </svg>
+        </div>
+        <aside :style="openNav">
+          <div>
+            <a
+              href="#summary"
+              class="link"
+              :class="{ active: currentSection == 'summary' }"
+              @click="currentSection = 'summary'"
+              >Summary</a
+            >
+            <a
+              href="#introduction"
+              class="link"
+              :class="{ active: currentSection == 'introduction' }"
+              @click="currentSection = 'introduction'"
+              >1. Introduction</a
+            >
+            <a
+              href="#project-background"
+              class="link sublink"
+              :class="{ active: currentSection == 'project-background' }"
+              @click="currentSection = 'project-background'"
+              >1.1. Project Background</a
+            >
+            <a
+              href="#development-background"
+              class="link sublink"
+              :class="{ active: currentSection == 'development-background' }"
+              @click="currentSection = 'development-background'"
+              >1.2. Development Background</a
+            >
+            <a
+              href="#project-positioning"
+              class="link sublink"
+              :class="{ active: currentSection == 'project-positioning' }"
+              @click="currentSection = 'project-positioning'"
+              >1.3. Easy Get Coin project positioning</a
+            >
+            <a
+              href="#ownership-transferability"
+              class="link sublink"
+              :class="{ active: currentSection == 'ownership-transferability' }"
+              @click="currentSection = 'ownership-transferability'"
+              >1.4. Enhance ownership and transferability</a
+            >
+            <a
+              href="#goals-vision"
+              class="link sublink"
+              :class="{ active: currentSection == 'goals-vision' }"
+              @click="currentSection = 'goals-vision'"
+              >1.5. Goals and Vision</a
+            >
+            <a
+              href="#market-analysis"
+              class="link"
+              :class="{ active: currentSection == 'market-analysis' }"
+              @click="currentSection = 'market-analysis'"
+              >2. Market Analysis</a
+            >
+            <a
+              href="#target-market"
+              class="link sublink"
+              :class="{ active: currentSection == 'target-market' }"
+              @click="currentSection = 'target-market'"
+              >2.1. Target Market Description</a
+            >
+            <a
+              href="#competiter-analysis"
+              class="link sublink"
+              :class="{ active: currentSection == 'competiter-analysis' }"
+              @click="currentSection = 'competiter-analysis'"
+              >2.2. Competitor Analysis</a
+            >
+            <a
+              href="#market-trends"
+              class="link sublink"
+              :class="{ active: currentSection == 'market-trends' }"
+              @click="currentSection = 'market-trends'"
+              >2.3. Market Trends</a
+            >
+            <a
+              href="#customer-aquisition"
+              class="link sublink"
+              :class="{ active: currentSection == 'customer-aquisition' }"
+              @click="currentSection = 'customer-aquisition'"
+              >2.4. Customer Aquisition</a
+            >
+            <a
+              href="#problems-solutions"
+              class="link"
+              :class="{ active: currentSection == 'problems-solutions' }"
+              @click="currentSection = 'problems-solutions'"
+              >3. Problems and Solutions</a
+            >
+            <a
+              href="#market-issues"
+              class="link sublink"
+              :class="{ active: currentSection == 'market-issues' }"
+              @click="currentSection = 'market-issues'"
+              >3.1. Market Issues</a
+            >
+            <a
+              href="#solution"
+              class="link sublink"
+              :class="{ active: currentSection == 'solution' }"
+              @click="currentSection = 'solution'"
+              >3.2. Solution</a
+            >
+            <a
+              href="#project-description"
+              class="link"
+              :class="{ active: currentSection == 'project-description' }"
+              @click="currentSection = 'project-description'"
+              >4. Project Description</a
+            >
+            <a
+              href="#core-functions"
+              class="link sublink"
+              :class="{ active: currentSection == 'core-functions' }"
+              @click="currentSection = 'core-functions'"
+              >4.1. Core Functions</a
+            >
+            <a
+              href="#technology"
+              class="link sublink"
+              :class="{ active: currentSection == 'technology' }"
+              @click="currentSection = 'technology'"
+              >4.2. Technology</a
+            >
+            <a
+              href="#community-governance"
+              class="link"
+              :class="{ active: currentSection == 'community-governance' }"
+              @click="currentSection = 'community-governance'"
+              >5. Community Governance</a
+            >
+            <a
+              href="#pledge-mechanism"
+              class="link sublink"
+              :class="{ active: currentSection == 'pledge-mechanism' }"
+              @click="currentSection = 'pledge-mechanism'"
+              >5.1. Pledge Mechanism</a
+            >
+            <a
+              href="#reward-mechanism"
+              class="link sublink"
+              :class="{ active: currentSection == 'reward-mechanism' }"
+              @click="currentSection = 'reward-mechanism'"
+              >5.2. Community Reward Mechanism</a
+            >
+            <a
+              href="#token-economy"
+              class="link"
+              :class="{ active: currentSection == 'token-economy' }"
+              @click="currentSection = 'token-economy'"
+              >6. Token Economy</a
+            >
+            <a
+              href="#introduction-token"
+              class="link sublink"
+              :class="{ active: currentSection == 'introduction-token' }"
+              @click="currentSection = 'introduction-token'"
+              >6.1. Introduction to EGC Token</a
+            >
+            <a
+              href="#token-uses"
+              class="link sublink"
+              :class="{ active: currentSection == 'token-uses' }"
+              @click="currentSection = 'token-uses'"
+              >6.2. As a developer, let me introduce you to the multiple uses of EGC tokens</a
+            >
+            <a
+              href="#destruction-mechanism"
+              class="link sublink"
+              :class="{ active: currentSection == 'destruction-mechanism' }"
+              @click="currentSection = 'destruction-mechanism'"
+              >6.3. Destruction Mechanism</a
+            >
+            <a
+              href="#unlocking-schedule"
+              class="link sublink"
+              :class="{ active: currentSection == 'unlocking-schedule' }"
+              @click="currentSection = 'unlocking-schedule'"
+              >6.4. Allocation and unlocking schedule</a
+            >
+            <a
+              href="#private-placement"
+              class="link sublink"
+              :class="{ active: currentSection == 'private-placement' }"
+              @click="currentSection = 'private-placement'"
+              >6.5. Private Placement</a
+            >
+            <a
+              href="#technical-architecture"
+              class="link"
+              :class="{ active: currentSection == 'technical-architecture' }"
+              @click="currentSection = 'technical-architecture'"
+              >7. Technical Architecture</a
+            >
+            <a
+              href="#overview"
+              class="link sublink"
+              :class="{ active: currentSection == 'overview' }"
+              @click="currentSection = 'overview'"
+              >7.1. Overview</a
+            >
+            <a
+              href="#tech-architecture"
+              class="link sublink"
+              :class="{ active: currentSection == 'tech-architecture' }"
+              @click="currentSection = 'tech-architecture'"
+              >7.2. Technical Architecture</a
+            >
+            <a
+              href="#data-flow"
+              class="link sublink"
+              :class="{ active: currentSection == 'data-flow' }"
+              @click="currentSection = 'data-flow'"
+              >7.3. Data flow and interaction</a
+            >
+            <a
+              href="#security-privacy"
+              class="link sublink"
+              :class="{ active: currentSection == 'security-privacy' }"
+              @click="currentSection = 'security-privacy'"
+              >7.4. Security and Privacy</a
+            >
+            <a
+              href="#dev-roadmap"
+              class="link"
+              :class="{ active: currentSection == 'dev-roadmap' }"
+              @click="currentSection = 'dev-roadmap'"
+              >8. Development Goals</a
+            >
+            <a
+              href="#short-term-goals"
+              class="link sublink"
+              :class="{ active: currentSection == 'short-term-goals' }"
+              @click="currentSection = 'short-term-goals'"
+              >8.1. Short-Term Goals</a
+            >
+            <a
+              href="#long-term-goals"
+              class="link sublink"
+              :class="{ active: currentSection == 'long-term-goals' }"
+              @click="currentSection = 'long-term-goals'"
+              >8.2. Long-term goal: Introduce blockchain technology to traditional game companies
+              and provide new financing methods</a
+            >
+            <a
+              href="#fund"
+              class="link"
+              :class="{ active: currentSection == 'fund' }"
+              @click="currentSection = 'fund'"
+              >9. Fund</a
+            >
+            <a
+              href="#blockchain-foundation"
+              class="link sublink"
+              :class="{ active: currentSection == 'blockchain-foundation' }"
+              @click="currentSection = 'blockchain-foundation'"
+              >9.1. Introduction to Blockchain Foundation</a
+            >
+            <a
+              href="#conclusion"
+              class="link"
+              :class="{ active: currentSection == 'conclusion' }"
+              @click="currentSection = 'conclusion'"
+              >10. Conclusion</a
+            >
+            <a
+              href="#vision-goals"
+              class="link sublink"
+              :class="{ active: currentSection == 'vision-goals' }"
+              @click="currentSection = 'vision-goals'"
+              >10.1. Vision and Goals</a
+            >
+          </div>
+        </aside>
+      </div>
       <article>
         <h1 class="page-heading">EasyGetCoin Whitepaper</h1>
         <section class="section">
@@ -1858,329 +2158,66 @@ onMounted(() => {
           </p>
         </section>
       </article>
-      <aside>
-        <div>
-          <p style="color: #fff; padding-left: 20px; border-left: 1px solid white">On This Page</p>
-          <a
-            href="#summary"
-            class="link"
-            :class="{ active: currentSection == 'summary' }"
-            @click="currentSection = 'summary'"
-            >Summary</a
-          >
-          <a
-            href="#introduction"
-            class="link"
-            :class="{ active: currentSection == 'introduction' }"
-            @click="currentSection = 'introduction'"
-            >1. Introduction</a
-          >
-          <a
-            href="#project-background"
-            class="link sublink"
-            :class="{ active: currentSection == 'project-background' }"
-            @click="currentSection = 'project-background'"
-            >1.1. Project Background</a
-          >
-          <a
-            href="#development-background"
-            class="link sublink"
-            :class="{ active: currentSection == 'development-background' }"
-            @click="currentSection = 'development-background'"
-            >1.2. Development Background</a
-          >
-          <a
-            href="#project-positioning"
-            class="link sublink"
-            :class="{ active: currentSection == 'project-positioning' }"
-            @click="currentSection = 'project-positioning'"
-            >1.3. Easy Get Coin project positioning</a
-          >
-          <a
-            href="#ownership-transferability"
-            class="link sublink"
-            :class="{ active: currentSection == 'ownership-transferability' }"
-            @click="currentSection = 'ownership-transferability'"
-            >1.4. Enhance ownership and transferability</a
-          >
-          <a
-            href="#goals-vision"
-            class="link sublink"
-            :class="{ active: currentSection == 'goals-vision' }"
-            @click="currentSection = 'goals-vision'"
-            >1.5. Goals and Vision</a
-          >
-          <a
-            href="#market-analysis"
-            class="link"
-            :class="{ active: currentSection == 'market-analysis' }"
-            @click="currentSection = 'market-analysis'"
-            >2. Market Analysis</a
-          >
-          <a
-            href="#target-market"
-            class="link sublink"
-            :class="{ active: currentSection == 'target-market' }"
-            @click="currentSection = 'target-market'"
-            >2.1. Target Market Description</a
-          >
-          <a
-            href="#competiter-analysis"
-            class="link sublink"
-            :class="{ active: currentSection == 'competiter-analysis' }"
-            @click="currentSection = 'competiter-analysis'"
-            >2.2. Competitor Analysis</a
-          >
-          <a
-            href="#market-trends"
-            class="link sublink"
-            :class="{ active: currentSection == 'market-trends' }"
-            @click="currentSection = 'market-trends'"
-            >2.3. Market Trends</a
-          >
-          <a
-            href="#customer-aquisition"
-            class="link sublink"
-            :class="{ active: currentSection == 'customer-aquisition' }"
-            @click="currentSection = 'customer-aquisition'"
-            >2.4. Customer Aquisition</a
-          >
-          <a
-            href="#problems-solutions"
-            class="link"
-            :class="{ active: currentSection == 'problems-solutions' }"
-            @click="currentSection = 'problems-solutions'"
-            >3. Problems and Solutions</a
-          >
-          <a
-            href="#market-issues"
-            class="link sublink"
-            :class="{ active: currentSection == 'market-issues' }"
-            @click="currentSection = 'market-issues'"
-            >3.1. Market Issues</a
-          >
-          <a
-            href="#solution"
-            class="link sublink"
-            :class="{ active: currentSection == 'solution' }"
-            @click="currentSection = 'solution'"
-            >3.2. Solution</a
-          >
-          <a
-            href="#project-description"
-            class="link"
-            :class="{ active: currentSection == 'project-description' }"
-            @click="currentSection = 'project-description'"
-            >4. Project Description</a
-          >
-          <a
-            href="#core-functions"
-            class="link sublink"
-            :class="{ active: currentSection == 'core-functions' }"
-            @click="currentSection = 'core-functions'"
-            >4.1. Core Functions</a
-          >
-          <a
-            href="#technology"
-            class="link sublink"
-            :class="{ active: currentSection == 'technology' }"
-            @click="currentSection = 'technology'"
-            >4.2. Technology</a
-          >
-          <a
-            href="#community-governance"
-            class="link"
-            :class="{ active: currentSection == 'community-governance' }"
-            @click="currentSection = 'community-governance'"
-            >5. Community Governance</a
-          >
-          <a
-            href="#pledge-mechanism"
-            class="link sublink"
-            :class="{ active: currentSection == 'pledge-mechanism' }"
-            @click="currentSection = 'pledge-mechanism'"
-            >5.1. Pledge Mechanism</a
-          >
-          <a
-            href="#reward-mechanism"
-            class="link sublink"
-            :class="{ active: currentSection == 'reward-mechanism' }"
-            @click="currentSection = 'reward-mechanism'"
-            >5.2. Community Reward Mechanism</a
-          >
-          <a
-            href="#token-economy"
-            class="link"
-            :class="{ active: currentSection == 'token-economy' }"
-            @click="currentSection = 'token-economy'"
-            >6. Token Economy</a
-          >
-          <a
-            href="#introduction-token"
-            class="link sublink"
-            :class="{ active: currentSection == 'introduction-token' }"
-            @click="currentSection = 'introduction-token'"
-            >6.1. Introduction to EGC Token</a
-          >
-          <a
-            href="#token-uses"
-            class="link sublink"
-            :class="{ active: currentSection == 'token-uses' }"
-            @click="currentSection = 'token-uses'"
-            >6.2. As a developer, let me introduce you to the multiple uses of EGC tokens</a
-          >
-          <a
-            href="#destruction-mechanism"
-            class="link sublink"
-            :class="{ active: currentSection == 'destruction-mechanism' }"
-            @click="currentSection = 'destruction-mechanism'"
-            >6.3. Destruction Mechanism</a
-          >
-          <a
-            href="#unlocking-schedule"
-            class="link sublink"
-            :class="{ active: currentSection == 'unlocking-schedule' }"
-            @click="currentSection = 'unlocking-schedule'"
-            >6.4. Allocation and unlocking schedule</a
-          >
-          <a
-            href="#private-placement"
-            class="link sublink"
-            :class="{ active: currentSection == 'private-placement' }"
-            @click="currentSection = 'private-placement'"
-            >6.5. Private Placement</a
-          >
-          <a
-            href="#technical-architecture"
-            class="link"
-            :class="{ active: currentSection == 'technical-architecture' }"
-            @click="currentSection = 'technical-architecture'"
-            >7. Technical Architecture</a
-          >
-          <a
-            href="#overview"
-            class="link sublink"
-            :class="{ active: currentSection == 'overview' }"
-            @click="currentSection = 'overview'"
-            >7.1. Overview</a
-          >
-          <a
-            href="#tech-architecture"
-            class="link sublink"
-            :class="{ active: currentSection == 'tech-architecture' }"
-            @click="currentSection = 'tech-architecture'"
-            >7.2. Technical Architecture</a
-          >
-          <a
-            href="#data-flow"
-            class="link sublink"
-            :class="{ active: currentSection == 'data-flow' }"
-            @click="currentSection = 'data-flow'"
-            >7.3. Data flow and interaction</a
-          >
-          <a
-            href="#security-privacy"
-            class="link sublink"
-            :class="{ active: currentSection == 'security-privacy' }"
-            @click="currentSection = 'security-privacy'"
-            >7.4. Security and Privacy</a
-          >
-          <a
-            href="#dev-roadmap"
-            class="link"
-            :class="{ active: currentSection == 'dev-roadmap' }"
-            @click="currentSection = 'dev-roadmap'"
-            >8. Development Goals</a
-          >
-          <a
-            href="#short-term-goals"
-            class="link sublink"
-            :class="{ active: currentSection == 'short-term-goals' }"
-            @click="currentSection = 'short-term-goals'"
-            >8.1. Short-Term Goals</a
-          >
-          <a
-            href="#long-term-goals"
-            class="link sublink"
-            :class="{ active: currentSection == 'long-term-goals' }"
-            @click="currentSection = 'long-term-goals'"
-            >8.2. Long-term goal: Introduce blockchain technology to traditional game companies and
-            provide new financing methods</a
-          >
-          <a
-            href="#fund"
-            class="link"
-            :class="{ active: currentSection == 'fund' }"
-            @click="currentSection = 'fund'"
-            >9. Fund</a
-          >
-          <a
-            href="#blockchain-foundation"
-            class="link sublink"
-            :class="{ active: currentSection == 'blockchain-foundation' }"
-            @click="currentSection = 'blockchain-foundation'"
-            >9.1. Introduction to Blockchain Foundation</a
-          >
-          <a
-            href="#conclusion"
-            class="link"
-            :class="{ active: currentSection == 'conclusion' }"
-            @click="currentSection = 'conclusion'"
-            >10. Conclusion</a
-          >
-          <a
-            href="#vision-goals"
-            class="link sublink"
-            :class="{ active: currentSection == 'vision-goals' }"
-            @click="currentSection = 'vision-goals'"
-            >10.1. Vision and Goals</a
-          >
-        </div>
-      </aside>
     </div>
   </div>
 </template>
 
 <style scoped>
 .whitepaper-container {
-  display: flex;
-  padding: 100px;
+  padding: 100px 20px 30px;
 }
 .bg {
-  height: 50px;
+  height: 68px;
   width: 100%;
-  z-index: 100;
+  z-index: 998;
   background: #141217;
   position: fixed;
 }
 .page-heading {
-  font-size: 45px;
+  font-size: 40px;
+}
+.page-nav {
+  width: 95%;
+  margin: 0 auto 40px;
+  border: 1px solid #3f3e3e;
+  border-radius: 5px;
+}
+.page-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+}
+.page-nav-header > p {
+  font-size: 16px;
+  color: #868383;
 }
 article {
   color: white;
-  width: 75%;
+  width: 95%;
+  margin: 0 auto;
 }
 .section {
   margin-bottom: 60px;
   width: 100%;
 }
 .section-header {
-  font-size: 40px;
-  padding-top: 60px;
+  font-size: 30px;
+  padding-top: 70px;
 }
 .section-subheader {
-  font-size: 25px;
+  font-size: 20px;
   padding-top: 0px;
 }
 .section-content-header {
-  font-size: 23px;
+  font-size: 18px;
   padding-top: 20px;
 }
 .section-content {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 35px;
   margin-top: 20px;
-  width: 90%;
+  width: 100%;
 }
 .underline {
   text-decoration: underline;
@@ -2207,17 +2244,13 @@ article {
 }
 .img-container {
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  width: 100%;
-}
-.img-container > img {
-  width: 50%;
 }
 .img-container-1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
-  width: 100%;
 }
 .img-container-1 > img {
   width: 100%;
@@ -2230,7 +2263,6 @@ article {
   border: 1px solid #dededf;
   height: 100%;
   width: 100%;
-  table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 1px;
   text-align: left;
@@ -2241,8 +2273,8 @@ article {
   color: #000000;
   padding: 5px;
   font-size: 11px;
-  word-break: break-all;
   text-align: center;
+  line-height: 15px;
 }
 .table_component tr {
   height: 40px;
@@ -2253,19 +2285,13 @@ article {
   color: white;
   padding: 5px;
   font-size: 11px;
-  word-break: break-all;
   text-align: center;
 }
 aside {
-  width: 25%;
-  height: 90vh;
-  padding-bottom: 100px;
-  position: fixed;
-  right: 50px;
-  overflow-y: scroll;
+  width: 100%;
+  padding-bottom: 20px;
 }
 aside > div {
-  position: sticky;
   top: 100px;
   padding-left: 2em;
   display: flex;
@@ -2275,7 +2301,7 @@ aside > div {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #7a7676de;
+  color: rgba(122, 118, 118, 0.872);
   border-left: 1px solid rgba(122, 118, 118, 0.872);
   padding: 7px 0 7px 20px;
   line-height: 25px;
@@ -2286,5 +2312,24 @@ aside > div {
 }
 .sublink {
   padding: 5px 0 5px 35px;
+}
+@media screen and (min-width: 551px) {
+  .bg {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 751px) {
+  .section-header {
+    font-size: 35px;
+  }
+  .section-subheader {
+    font-size: 25px;
+  }
+  .section-content {
+    font-size: 18px;
+  }
+  .section-content-header {
+    font-size: 20px;
+  }
 }
 </style>
